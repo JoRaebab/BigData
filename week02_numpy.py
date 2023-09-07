@@ -2,9 +2,7 @@ import numpy as np
 import random
 
 r = int(input("input number : "))
-l = list()
-for i in range(r):
-    l.append(random.randint(1, 100))
+l = [random.randint(1, 100) for i in range(r)]
 v = np.array(l, dtype='int16')
 print(v)
 
