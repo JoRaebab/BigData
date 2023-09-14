@@ -25,9 +25,9 @@ en_number = tk.Entry()
 btn_click = tk.Button(text="click me!", command=click_button)
 
 # widget layout
-lbl_result.pack()
-en_number.pack(fill='x')
-btn_click.pack(fill='x')
+lbl_result.pack(side='right')
+en_number.pack(side='right')
+btn_click.pack(side='right')
 
 window.mainloop()
 # n = int(input("input number : "))
