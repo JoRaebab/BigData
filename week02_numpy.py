@@ -9,10 +9,6 @@ def click_button():
         l = [random.randint(1, 100) for i in range(n)]
         v = np.array(l, dtype='int16')
         lbl_result.config(text=v)
-    except ValueError as err:
-        lbl_result.config(text=f"입력 값이 없습니다.\n{err}")
-        messagebox.showerror('Error!',f"입력 값이 없습니다.\n{err}")
-
 
 
 window = tk.Tk()
@@ -25,9 +21,9 @@ en_number = tk.Entry()
 btn_click = tk.Button(text="click me!", command=click_button)
 
 # widget layout
-lbl_result.pack(side='right')
-en_number.pack(side='right')
-btn_click.pack(side='right')
+lbl_result.pack()
+en_number.pack(fill='x')
+btn_click.pack(fill='x')
 
 window.mainloop()
 # n = int(input("input number : "))
