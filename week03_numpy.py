@@ -8,9 +8,7 @@ def click_button():
         r = int(en_row.get())
         c = int(en_col.get())
 
-        rows= list()
-        for i in range(c):
-            rows.append([random.randint(1, 100) for i in range(r)])
+        rows= [[random.randint(1, 100) for i in range(r)] for i in range(c)]
         # print(rows)
         matrix = np.array(rows, dtype='int16')
         lbl_result.config(text=matrix)
@@ -21,7 +19,7 @@ def click_button():
 
 
 window = tk.Tk()
-window.title('numpy gui version v1.1')
+window.title('numpy gui version v1.2')
 window.geometry('300x150')
 
 # create widget
