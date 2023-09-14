@@ -3,13 +3,21 @@ import numpy as np
 import tkinter as tk  # Built in GUI
 from tkinter import messagebox
 
+def create_2darray(row, col):
+    """
+    행과 열값을 입력 받아 2차원 넘파이 배열을 반환하는 함수
+    :param row: 행
+    :param col: 열
+    :return: 넘파이 2차원 배열
+    """
+    return np.random.randint(1, 101, size=(row,col))
+
 def click_button():
     try:
         r,c = map(int, en_row_col.get().split()) # space bar
-
-        rows= [[np.random.randint(1, 100) for i in range(r)] for i in range(c)]
-        # print(rows)
-        matrix = np.array(rows, dtype='int16')
+        # rows= [[np.random.randint(1, 100) for i in range(r)] for i in range(c)]
+        # matrix = np.array(create_2darray(r, c), dtype='int16')
+        matrix = create_2darray(r, c)
         lbl_result.config(text=matrix)
     except ValueError as err:
         lbl_result.config(text=f"입력 값이 없습니다.\n{err}")
