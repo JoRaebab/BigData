@@ -25,9 +25,11 @@ en_number = tk.Entry()
 btn_click = tk.Button(text="click me!", command=click_button)
 
 # widget layout
-lbl_result.grid(row=0, column=0)
-en_number.grid(row=1, column=0)
-btn_click.grid(row=1, column=1)
+lbl_result.place(x=50, y=50)
+btn_click.place(x=0, y=0)
+# lbl_result.grid(row=0, column=0)
+# en_number.grid(row=1, column=0)
+# btn_click.grid(row=1, column=1)
 
 window.mainloop()
 # n = int(input("input number : "))
