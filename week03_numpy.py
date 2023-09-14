@@ -2,7 +2,10 @@ import numpy as np
 import tkinter as tk  # Built in GUI
 from tkinter import messagebox
 
-def click_button(ev):
+def press_enter_key(ev):
+    click_button()
+
+def click_button():
     try:
         r,c = map(int, en_row_col.get().split()) # space bar
         matrix = np.random.randint(1, 101, size=(r,c))
@@ -13,7 +16,7 @@ def click_button(ev):
 
 
 window = tk.Tk()
-window.title('numpy gui version v1.6')
+window.title('numpy gui version v1.7')
 window.geometry('300x150')
 
 # create widget
@@ -22,7 +25,7 @@ en_row_col = tk.Entry()
 btn_click = tk.Button(text="click me!", command=click_button)
 
 # enter key binding with button
-en_row_col.bind("<Return>", click_button)
+en_row_col.bind("<Return>", press_enter_key)
 
 # widget layout
 
