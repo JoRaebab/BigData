@@ -4,7 +4,6 @@ import tkinter as tk  # Built in GUI
 from tkinter import messagebox
 
 def click_button():
-    try:
         n = int(en_number.get())
         l = [random.randint(1, 100) for i in range(n)]
         v = np.array(l, dtype='int16')
