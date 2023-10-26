@@ -1,11 +1,30 @@
 import numpy as np
 import pandas as pd
 
-df = pd.DataFrame({
-    'A': [1, 2, np.nan, 4],
-    'B': [5, np.nan, 7, 8],
-    'C': [9, 10, 11, np.nan]
-})
+data = np.array([
+    [1, 5, 9],
+    [2, np.nan, 10],
+    [np.nan, 7, 11],
+    [4, 8, np.nan]
+])
+print(data)
+
+means = np.nanmean(data, axis=0) # 각 column의 평균 값들
+for i in range(data.shape[1]):
+    #print(i)
+    mask = np.isnan(data[:, i])
+    #print(mask) # True, False 값을 갖는 배열 생성
+    data[mask, i] = means[i]
+print(data)
+
+
+
+# df = pd.DataFrame({
+#     'A': [1, 2, np.nan, 4],
+#     'B': [5, np.nan, 7, 8],
+#     'C': [9, 10, 11, np.nan]
+# })
+
 #1
 # df.fillna(df.mean(), inplace=True)
 # print(df)
@@ -17,10 +36,10 @@ df = pd.DataFrame({
 #     print(df)
 
 #3
-from sklearn.impute import SimpleImputer # 결측치 전용 처리 클래스
-i = SimpleImputer(strategy='median')
-df = pd.DataFrame(i.fit_transform(df), columns=df.columns)
-print(df)
+# from sklearn.impute import SimpleImputer # 결측치 전용 처리 클래스
+# i = SimpleImputer(strategy='median')
+# df = pd.DataFrame(i.fit_transform(df), columns=df.columns)
+# print(df)
 
 # def info(x):
 #     print(f"배열의 차원은 {x.ndim}입니다.")
