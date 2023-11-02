@@ -1,15 +1,35 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from numpy.linalg import inv
+# linalg == linear algebra
+np.random.seed()
+a = np.random.uniform(size=10).reshape(2, 5) #균등 분포(일양 분포)
+b = np.random.normal(0, 1, 100) #정규 분포
+print(a)
+print(b)
+plt.hist(b)
+plt.show()
 
-a = np.arange(1, 7).reshape(2, 3)
-b = np.array([
-    [5, 20],
-    [11, -1],
-    [9, 3]
-])
-print(a.dot(b))
-print(np.dot(a, b))
-print(b.dot(a))
-print(np.dot(b, a))
+# X = np.array([
+#     [1, 2, 3],
+#     [1, 0, 0],
+#     [0, 0, 1]
+# ])
+# print(X)
+# Z = inv(X)
+# print(Z)
+# print(X.dot(Z))
+
+# a = np.arange(1, 7).reshape(2, 3)
+# b = np.array([
+#     [5, 20],
+#     [11, -1],
+#     [9, 3]
+# ])
+# print(a.dot(b))
+# print(np.dot(a, b))
+# print(b.dot(a))
+# print(np.dot(b, a))
 
 
 
