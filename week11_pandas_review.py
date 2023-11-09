@@ -8,6 +8,9 @@ df1 = pd.DataFrame(
     }, index=[1, 2, 3]
 )
 print(df1)
+print(df1.sort_values('MAT'))
+df1 = df1.drop(columns=['ENG'])
+print(df1)
 
 df2 = pd.DataFrame(
         [[99, 89, 100],
