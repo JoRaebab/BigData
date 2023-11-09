@@ -1,30 +1,36 @@
 import pandas as pd
 
 df = pd.DataFrame(
-    [[99, 89, 100],
+    [[99, 89, 81],
         [91, 98, 90],
-        [100, 97, 85],
-        [83, 100, 94]],
+        [95, 97, 85],
+        [83, 96, 94]],
     index=[1, 2, 3, 4],
     columns=['KOR', 'ENG', 'MAT']
 )
-# print(df.mean()) # 평균 출력
-# print(df.max()) # 최대 값 출력
+
+# def scale_score(n):
+#     return n + 1
+#
 # print(df)
-# df_copy = df.iloc[:, [0, 2]]
-# df_copy = df.loc[:, ['KOR', 'MAT']]
-# df_copy = df.loc[:, 'KOR':'MAT':2] #loc는 마지막으로 지정한 항목까지 포함해서 출력
+# df = df.apply(scale_score)
+# print(df)
+
+print(df)
+df = df.apply(lambda n: n+1)
+print(df)
 
 #국어, 수학 칼럼을 추출
 # 조건은 국어 성적이 95점 이상인 경우
 # df_copy = df.loc[df['KOR'] >= 95, ['KOR', 'MAT']]
 # print(df_copy)
 
-def scale_score(n):
-    return n + 1
-
-df = df.apply(scale_score)
-print(df)
+# print(df.mean()) # 평균 출력
+# print(df.max()) # 최대 값 출력
+# print(df)
+# df_copy = df.iloc[:, [0, 2]]
+# df_copy = df.loc[:, ['KOR', 'MAT']]
+# df_copy = df.loc[:, 'KOR':'MAT':2] #loc는 마지막으로 지정한 항목까지 포함해서 출력
 
 #1번 학생의 수학성적(100) 출력
 # print(df.at[1, 'MAT'])
