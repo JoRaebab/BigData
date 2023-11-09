@@ -17,3 +17,13 @@ df2 = pd.DataFrame(
     columns=['KOR', 'ENG', 'MAT']
 )
 print(df2)
+
+df2 = (pd.melt(df2) #melt -> 데이터프레임을 바꿔주는 함수
+       .rename(columns={
+        'variable' : 'subject', # 이름 변경
+        'value' : 'score'})
+        .query('score >= 90') # score가 90점 이상인 데이터만 뽑아냄
+        .sort_values('score',ascending=False)
+       )
+print(df2)
+
