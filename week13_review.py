@@ -1,18 +1,12 @@
-import numpy as np
+import seaborn as sns
+import pandas as pd
 
-a1 = np.ones(5)
-a2 = np.array([1, 1, 1, 1, 1])
-a3 = np.arange(5) * 0 + 1
-a4 = np.zeros(5) + 1
-a5 = np.linspace(1, 1, 5)
-a6 = np.full(5, 1)
+titanic = sns.load_dataset('titanic')
 
-print(a1)
-print(a2)
-print(a3)
-print(a4)
-print(a5)
-print(a6)
+#print(type(titanic))
+print(titanic.isnull())
 
 
-
+# print(titanic.describe())
+# print(titanic.info)
+# print(titanic.tail())
